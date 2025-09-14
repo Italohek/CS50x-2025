@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Had the worst time in all scenarios, as expected of bubble.
+
+sort2 uses: Merge sort
+
+How do you know?: The time it took to sort the random50000.txt was really fast, as expected of an O(nlogn) algorthm
+
+sort3 uses: Selection sort
+
+How do you know?: Had better times than bubble, but still wasnt good enough to surpass merge sort, so I could deduce this was selection sort
