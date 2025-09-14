@@ -1,0 +1,51 @@
+:root {
+  --custom-gray: #adb5bd;
+  --custom-teal: #20c997;
+  --custom-yellow: #ffc107;
+  --custom-purple: #6f42c1;
+  --custom-indigo: #6610f2;
+  --custom-blue: #0d6efd;
+  --custom-green: #198754;
+  --custom-cyan: #0dcaf0;
+  --custom-black: #000;
+  --custom-pink: #d63384;
+}
+
+.bg-custom-gray {
+    background-color: var(--custom-gray);
+}
+
+.text-custom-indigo {
+    color: var(--custom-indigo);
+}
+
+/* Body Tag Selector */
+body {
+    padding-top: 56px; /* Prevents content from hiding behind the fixed navbar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Class Selector */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--custom-yellow) !important; /* text-warning yellow */
+}
+
+/* ID Selector */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto; /* Centers the form */
+}
+
+/* Pseudo-class Selector */
+.nav-link:hover {
+    color: var(--custom-yellow) !important;
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+/* Descendant Selector */
+.card-body h3 {
+    margin-bottom: 1rem; /* Adds space below the h3 in cards */
+}

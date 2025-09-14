@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Defines the constant for the buttons, answer and feedback to first question
+                const buttons = document.querySelectorAll('.q1button');
+                const feedback = document.querySelector('#feedback');
+                const correctAnswer = 'Infinity Edge';
+                // Logic to the first question buttons
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        if (button.textContent === correctAnswer) {
+                            button.style.backgroundColor = 'green';
+                            feedback.textContent = 'Correct!';
+                        } else {
+                            button.style.backgroundColor = 'red';
+                            feedback.textContent = 'Incorrect';
+                        }
+                    });
+                });
+
+                // Defines the elements of the free response
+                const freeResponseInput = document.querySelector('input[name="a"]');
+                const submitButton = document.querySelector('input[type=submit]');
+                const freeResponseFeedback = document.querySelector('#feedback2');
+
+                // The right answer to the question
+                const freeResponseAnswer = 'jhin';
+
+                // Add an event of click when the person submits it
+                submitButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    // Gets the entire answer in lower case to validate
+                    let userAnswer = freeResponseInput.value.trim().toLowerCase();
+
+                    // Validate if the answer is right
+                    if (userAnswer === freeResponseAnswer) {
+                        freeResponseInput.style.backgroundColor = 'green';
+                        freeResponseFeedback.textContent = 'Correct!';
+                    } else {
+                        freeResponseInput.style.backgroundColor = 'red';
+                        freeResponseFeedback.textContent = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+                <h3>What is the best item in a Jhin x Draven matchup?</h3>
+                <button class="q1button">Infinity Edge</button>
+                <button class="q1button">Swiftness Boots</button>
+                <button class="q1button">Manamune</button>
+                <p id="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the best ad carry in league of legends?</h3>
+                <input name="a">
+                <input type=submit>
+                <p id="feedback2"></p>
+                </div>
+        </div>
+    </body>
+</html>
